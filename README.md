@@ -8,6 +8,11 @@ Redis Docker Command:
 ```docker run --name Whatsup-Redis -d -p 6379:6379 redis redis-server --save 60 1 --loglevel warning``` 
 
 
+Zookeeper:
+```
+docker run -d -p 2181:2181 zookeeper
+```
+
 ## TODO
 ### Short term goals
 - Setup Docker container with all dependencies
