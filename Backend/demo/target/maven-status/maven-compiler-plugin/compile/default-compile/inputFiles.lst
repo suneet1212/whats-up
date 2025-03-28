@@ -1,1 +1,3 @@
 /home/suneet/Repos/whats-up/Backend/demo/src/main/java/com/whatsup/MainVerticle.java
+/home/suneet/Repos/whats-up/Backend/demo/src/main/java/com/whatsup/handler/NewUserHandler.java
+/home/suneet/Repos/whats-up/Backend/demo/src/main/java/com/whatsup/router/ApiRouter.java

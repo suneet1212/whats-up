@@ -1,17 +1,22 @@
 package com.whatsup;
 
+import com.whatsup.router.ApiRouter;
+
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
+import io.vertx.ext.web.Router;
 
 public class MainVerticle extends AbstractVerticle {
     @Override
     public void start() {
-        vertx.createHttpServer().requestHandler(req -> req.response().end("Hello from Vertx!"))
-            .listen(8080, http -> {
+        Router router = ApiRouter.createRouter(vertx);
+        vertx.createHttpServer()
+            .requestHandler(router)
+            .listen(3000, "0.0.0.0", http -> {
                 if(http.succeeded()) {
-                    System.out.println("Server started on port 8080");
+                    System.out.println("HTTP server started on port 3000");
                 } else {
-                    System.out.println("Failed to start server: " + http.cause());
+                    System.out.println("Error in starting server: " + http.cause());
                 }
             });
     }
